@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Web</title>
+    <!-- Enlazamos nuestra hoja de estilos externa -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Cabecera del portafolio -->
+    <header>
+        <h1>Portafolio de Tobías Atehortúa</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="mascotas.html">Mascotas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main>
+
+        <!-- Sección de Inicio -->
+        <section id="inicio">
+            <h2>¡Hola, soy Daniel Tobías Atehortúa Serna, Desarrollador Full Stack!</h2>
+            <p>Bienvenido a mi portafolio personal. Aquí podrás conocer más sobre mi trabajo y pasiones.</p>
+        </section>
+
+        <!-- Sección Sobre Mí -->
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <p>Soy un entusiasta de la tecnología, actualmente aprendiendo diseño y desarrollo web. Me encanta crear
+                interfaces limpias y de fácil uso para los usuarios.</p>
+        </section>
+
+        <!-- Sección de Proyectos (con lista ul como indica la HU1) -->
+        <section id="proyectos">
+            <h2>Mis Proyectos</h2>
+            <ul>
+                <li>
+                    <h3>Sitio Web Corporativo</h3>
+                    <p>Una página web creada para una pequeña empresa de venta de zapatos.</p>
+                </li>
+                <li>
+                    <h3>Blog Personal</h3>
+                    <p>Un espacio donde publico artículos sobre tecnología y estilo de vida.</p>
+                </li>
+                <li>
+                    <h3>App de Tareas</h3>
+                    <p>Una sencilla aplicación web para gestionar las tareas diarias.</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section id="contacto">
+            <h2>Ponte en contacto</h2>
+            <!-- Formulario básico -->
+            <form action="#" method="POST">
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2026 Tobías Atehortúa. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
