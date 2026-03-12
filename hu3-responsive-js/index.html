@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Responsive & JS</title>
+    <!-- Agregamos los estilos minificados optimizados (simulados) -->
+    <link rel="stylesheet" href="style.min.css">
+</head>
+
+<body>
+
+    <!-- Cabecera Responsive -->
+    <header class="header">
+        <h1>Portafolio de Tobías Atehortúa</h1>
+        <nav class="nav">
+            <ul class="nav-menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="mascotas.html" class="btn-primary">Mascotas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- Elemento interactivo para el mensaje de JS -->
+        <div id="mensaje-bienvenida" class="alerta o-oculto">
+            <p>¡Bienvenido a mi Portafolio iterativo!</p>
+        </div>
+
+        <section id="inicio" class="card card-intro">
+            <h2>¡Hola, soy Daniel Tobías Atehortúa Serna, Desarrollador Full Stack!</h2>
+            <!-- Párrafo que será manipulado por JS -->
+            <p id="texto-interactivo">Desarrollando soluciones web eficientes, accesibles y estéticamente agradables
+                empleando buenas prácticas.</p>
+            <button id="btn-cambiar-texto" class="btn-secondary">Un dato curioso...</button>
+        </section>
+
+        <section id="sobre-mi" class="card">
+            <h2>Sobre Mí</h2>
+            <p>Me apasiona convertir diseños en realidad mediante código. Disfruto escribiendo <strong>HTML
+                    semántico</strong>, <strong>CSS puro bien estructurado</strong> y <strong>JavaScript
+                    dinámico</strong>.</p>
+        </section>
+
+        <!-- Botón Toggle agregado para cumplir con requerimiento JS -->
+        <section class="card toggle-wrapper">
+            <button id="btn-toggle" class="btn-primary">Ver / Ocultar Habilidades</button>
+            <div id="seccion-habilidades" class="habilidades-content">
+                <ul>
+                    <li>HTML5 Moderno y Semántico</li>
+                    <li>CSS3, Flexbox y Grid Layouts</li>
+                    <li>Diseño Responsivo (Mobile First)</li>
+                    <li>Vanilla JavaScript (DOM, Eventos)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="proyectos" class="card">
+            <h2>Mis Proyectos</h2>
+            <div class="grid-proyectos">
+                <!-- Tarjeta 1 -->
+                <article class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80"
+                        alt="Código en pantalla" class="img-responsive">
+                    <div class="proyecto-info">
+                        <h3>App Educativa</h3>
+                        <p>Plataforma para el aprendizaje estructurado usando tecnologías frontend puras.</p>
+                    </div>
+                </article>
+                <!-- Tarjeta 2 -->
+                <article class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1481481602187-5ce105d677af?auto=format&fit=crop&w=400&q=80"
+                        alt="Diseño en cuaderno" class="img-responsive">
+                    <div class="proyecto-info">
+                        <h3>Blog de UI/UX</h3>
+                        <p>Diseño centrado en el usuario enfocado en legibilidad e interacción.</p>
+                    </div>
+                </article>
+                <!-- Tarjeta 3 -->
+                <article class="proyecto-card">
+                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+                        alt="Programación" class="img-responsive">
+                    <div class="proyecto-info">
+                        <h3>Sistema Dashboard</h3>
+                        <p>Panel de administración usando CSS Grid para un esquema de datos complejos.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="card">
+            <h2>Ponte en contacto</h2>
+            <form action="#" method="POST" class="form-contacto">
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Tobías Atehortúa. Códificando el futuro.</p>
+    </footer>
+
+    <!-- Enlazando el Script al final del body para que cargue despues del HTML -->
+    <script src="script.js"></script>
+</body>
+
+</html>

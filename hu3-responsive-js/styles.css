@@ -1,0 +1,438 @@
+/* ==========================================================================
+   ESTILOS RESPONSIVE Y VARIABLES GLOABLES - HISTORIA DE USUARIO 3
+   ========================================================================== */
+
+/* 1. CREACIÓN DE VARIABLES GLOBALES PARA HOMOGENEIZAR EL DISEÑO */
+:root {
+    /* Paleta Minimalista y Vibrante - Cyber/Neón sutil */
+    --primary-color: #00e5ff;       /* Cyan brillante y moderno */
+    --hover-color: #00b8cc;         /* Cyan oscurecido para hover */
+    --accent-color: #1a1a24;        /* Gris muy oscuro/Casi negro para contrastes firmes */
+    --accent-light: rgba(0, 229, 255, 0.1); /* Fondo para tarjetas con ligero tinte cyan */
+    --text-color: #ffffff;          /* Texto blanco para modo oscuro minimalista (opcional) o gris oscuro si mantenemos fondo claro */
+    --text-dark: #121212;           /* Texto oscuro */
+    --text-muted: #666666;          /* Texto secundario */
+    --bg-color: #fafafa;            /* Fondo base super limpio */
+    --card-bg: #ffffff;             /* Fondo de tarjetas */
+    
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Tipografía fluid/responsive (uso de rems y %) */
+    --font-size-base: 16px;
+    --border-radius: 16px;          /* Bordes más suaves */
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    --box-shadow-hover: 0 15px 35px rgba(0, 229, 255, 0.15); /* Sombra vibrante */
+    --transition-speed: 0.3s;
+}
+
+/* ==========================================================================
+   RESETEOS Y ESTILOS BASE 
+   ========================================================================== */
+* {
+    box-sizing: border-box; /* Fundamental para responsive, incluye paddings en el width total */
+}
+
+html {
+    font-size: var(--font-size-base); /* Base para el uso de 'rem' */
+    scroll-behavior: smooth; /* Desplazamiento suave para los anclajes de menú */
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-dark); /* Usar texto oscuro como base sobre fondo claro */
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    transition: color var(--transition-speed);
+}
+
+/* ==========================================================================
+   LAYOUT PRINCIPAL Y COMPONENTES
+   ========================================================================== */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0; /* Uso de rems en lugar de px */
+}
+
+/* Header */
+.header {
+    background-color: var(--card-bg);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header h1 {
+    color: var(--accent-color); /* Negro minimalista */
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.header h1 span {
+    color: var(--primary-color); /* Punto o acento de color */
+}
+
+/* Menú de Navegación */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    transition: all var(--transition-speed);
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+/* Componente Tarjeta (Card) */
+.card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.card h2 {
+    color: var(--accent-color);
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    display: inline-block;
+    position: relative;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    width: 40%;
+    height: 4px;
+    background-color: var(--primary-color);
+    bottom: -8px;
+    left: 0;
+    border-radius: 2px;
+}
+
+.card.text-center h2::after {
+    left: 30%;
+}
+
+/* Proyectos (CSS Grid Desktop First pero ajustable) */
+.grid-proyectos {
+    display: grid;
+    /* Grid de al menos 3 columnas para Desktop */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.proyecto-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Cajas siempre respetan el borde redondeado */
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(0,0,0,0.03);
+    box-shadow: var(--box-shadow);
+}
+
+.proyecto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-hover);
+    border-color: var(--accent-light);
+}
+
+.proyecto-info {
+    padding: 1.8rem;
+}
+
+.proyecto-info h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+}
+
+/* Galeria de mascotas (CSS Grid) */
+.grid-galeria {
+    display: grid;
+    /* Base Desktop: 3 a más columnas auto-adaptables o fijas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pet-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-color: var(--card-bg);
+    box-shadow: var(--box-shadow);
+    transition: all var(--transition-speed);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.pet-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.pet-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.pet-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+/* Formulario */
+.form-contacto {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 600px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 1rem;
+    border: 2px solid #eaeaea;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: #fafafa;
+    outline: none;
+    transition: all var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px var(--accent-light);
+}
+
+/* ==========================================================================
+   UTILIDADES Y BOTONES
+   ========================================================================== */
+
+/* Imágenes responsivas: Vital para asegurar que no rompan el layout  */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;   /* Elimina el espacio fantasma debajo de la imagen */
+    object-fit: cover;
+}
+
+.proyecto-card .img-responsive {
+    height: 200px;
+    width: 100%;
+}
+
+.pet-card .img-responsive {
+    height: 250px;
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+/* Botones genéricos agrupando reglas CSS*/
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px; /* Estilo pill - minimalista */
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all var(--transition-speed);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--accent-color) !important; /* Texto oscuro sobre el cyan */
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones/Modificaciones manejadas via JS */
+.o-oculto {
+    display: none;
+}
+
+.alerta {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: var(--box-shadow-hover);
+}
+
+.habilidades-content {
+    margin-top: 1.5rem;
+    padding: 1.5rem 2rem;
+    background-color: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: var(--border-radius);
+    /* Por defecto ocultamos la seccion en JS pero si no hay JS lo mostramos normal.
+       Para nuestro requerimiento el JS se encargará. */
+}
+
+.habilidades-content ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.habilidades-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+
+/* ==========================================================================
+   MEDIA QUERIES (RESPONSIVE WEB DESIGN)
+   ========================================================================== */
+
+/* DISPOSITIVOS MÓVILES (Hasta 768px) */
+@media (max-width: 768px) {
+    
+    /* Header en móvil */
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 1rem;
+    }
+
+    .header h1 {
+        margin-bottom: 1rem;
+    }
+
+    /* Menú en columna */
+    .nav-menu {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        width: 100%;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: 0.5rem;
+        background-color: var(--accent-color);
+        border-radius: 4px;
+    }
+
+    /* Proyectos en 1 columna */
+    .grid-proyectos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Galería mascotas en 2 columnas (o 1 si la pantalla es muy pequeña) */
+    .grid-galeria {
+        /* Con minmax en grid auto-fit esto se adapta autom., pero forzamos 2 en móvil */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* DISPOSITIVOS MUY PEQUEÑOS (Hasta 480px) */
+@media (max-width: 480px) {
+    /* Si la pantalla es un celular chico, las mascotas deben ir a 1 columna */
+    .grid-galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* TABLETS Y SCREENS MEDIOS (769px a 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    
+    /* Proyectos en 2 columnas */
+    .grid-proyectos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Galería en 3 columnas (aprovecha mejor el grid grid-template-columns original
+       o forzamos un maximo) */
+     .grid-galeria {
+         grid-template-columns: repeat(3, 1fr);
+     }
+}
+
+/* DESKTOP GRANDES (Más de 1024px) - Utiliza el diseño base definido arriba  */
+/* Arriba definimos grid-proyectos con 3 columnas por defecto */
