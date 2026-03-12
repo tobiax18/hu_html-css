@@ -1,0 +1,229 @@
+/* ESTILOS MEJORADOS - HISTORIA DE USUARIO 2 (FLEXBOX Y GRID) */
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a1a24;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+}
+
+/* 
+  FLEXBOX EN EL HEADER 
+  Permite alinear elementos a la izquierda y derecha de forma fluida
+*/
+.header-flex {
+    background-color: #ffffff;
+    color: #111111;
+    padding: 20px 40px;
+    display: flex; /* Activamos Flexbox */
+    justify-content: space-between; /* Espacio distribuido entre logo/titulo y la navegacion */
+    align-items: center; /* Alinea verticalmente al centro */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.header-flex h1 {
+    margin: 0;
+}
+
+.nav-flex {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Flexbox para poner los enlaces en fila horizontal */
+    gap: 20px; /* Crea un espacio elegante entre los elementos li */
+}
+
+.nav-flex li a {
+    color: #666666;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.nav-flex li a:hover {
+    background-color: rgba(112, 0, 255, 0.05); /* Ligerísimo tono de acento */
+    color: #7000ff; /* Púrpura eléctrico - Llamativo y minimalista */
+    text-decoration: none;
+}
+
+.nav-flex li a.highlight {
+    background-color: #7000ff;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(112, 0, 255, 0.2);
+}
+
+.nav-flex li a.highlight:hover {
+    background-color: #5900cc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(112, 0, 255, 0.3);
+}
+
+/* Estructura Principal */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); /* Sombra elegante */
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.card h2 {
+    color: #7000ff;
+    margin-top: 0;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+}
+
+/* 
+  CSS GRID EN PROYECTOS 
+  Ideal para generar un diseño en forma cuadriculada (tarjetas)
+*/
+.grid-proyectos {
+    display: grid; /* Activamos CSS Grid */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas de idéntico tamaño */
+    gap: 20px; /* Espaciado entre filas y columnas */
+    margin-top: 20px;
+}
+
+.proyecto-card {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    transition: all 0.3s ease; /* Animación sutil */
+}
+
+.proyecto-card:hover {
+    transform: translateY(-8px); /* Se eleva un poco al pasar el mouse */
+    box-shadow: 0 15px 35px rgba(112, 0, 255, 0.1);
+    border-color: rgba(112, 0, 255, 0.2);
+}
+
+.proyecto-card h3 {
+    margin-top: 0;
+    color: #1a1a24;
+    font-size: 20px;
+}
+
+/* Formulario */
+.formulario-contacto {
+    max-width: 500px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Apilamos label encima del input */
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1a1a24;
+}
+
+.form-group input, 
+.form-group textarea {
+    padding: 12px 16px;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    font-family: inherit; /* Hereda fuente para textarea */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #7000ff;
+}
+
+button {
+    background-color: #7000ff;
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(112, 0, 255, 0.2);
+}
+
+button:hover {
+    background-color: #5900cc;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(112, 0, 255, 0.3);
+}
+
+/* 
+  FLEXBOX CON WRAP PARA GALERÍA DE MASCOTAS 
+  Permite que las imágenes fluyan y pasen a la siguiente línea si no hay espacio
+*/
+.titulo-centrado {
+    text-align: center;
+}
+
+.galeria-mascotas-flex {
+    display: flex;
+    flex-wrap: wrap; /* Las tarjetas bajan de línea cuando se llena el ancho */
+    gap: 20px;
+    justify-content: center; /* Centramos el conjunto de mascotas */
+    margin-top: 25px;
+}
+
+.tarjeta-mascota {
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    width: 320px; /* Ancho base un poco mayor */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    overflow: hidden; /* Evita que la imagen sobresalga del borde redondeado */
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tarjeta-mascota:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(112, 0, 255, 0.1);
+    border-color: rgba(112, 0, 255, 0.1);
+}
+
+.tarjeta-mascota img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Evita que la imagen se deforme */
+    display: block; /* Remueve el espaciado default de imagenes */
+}
+
+.tarjeta-mascota h3 {
+    margin: 20px 0 5px;
+    color: #7000ff;
+    font-size: 22px;
+}
+
+.tarjeta-mascota p {
+    padding: 0 20px 20px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #1a1a24;
+    color: #fafafa;
+}
