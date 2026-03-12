@@ -15,7 +15,7 @@ El proyecto está dividido en carpetas que representan la evolución del código
 ```text
 hu_html/
 │
-├── README.md                  # Documentación del proyecto y guía de ramas
+├── README.md                  # Documentación del proyecto
 │
 ├── hu1-portafolio/            # HU1: Estructura básica HTML y CSS inicial
 │   ├── index.html
@@ -43,4 +43,4 @@ hu_html/
 5. Haz clic derecho sobre el archivo `index.html` y selecciona **"Open with Live Server"**.
 6. Se abrirá una pestaña en tu navegador predeterminado mostrando el proyecto en funcionamiento.
 
-*Este es un proyecto con fines educativos orientado a buenas prácticas en el ecosistema Frontend.*
+*Este es un proyecto con fines educativos.*
